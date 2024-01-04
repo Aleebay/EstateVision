@@ -1,0 +1,86 @@
+using System;
+
+namespace Operations
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Removed unused variables: make and model
+
+            int year = 2020;
+            float miles = 8_450.27f;
+            decimal price = 60_275.0m;
+
+            // Example 1: String interpolation with custom formatting
+            Console.WriteLine("Example 1: Custom Formatting");
+            Console.WriteLine($"Price: {price,15:C2}");
+            Console.WriteLine($"Miles: {miles,15:N2}");
+            Console.WriteLine($"Year: {year,15:D4}");
+            Console.WriteLine();
+
+            // Example 2: Interpolation with conditional expression
+            Console.WriteLine("Example 2: Conditional Expression");
+            string condition = miles > 10_000 ? "high" : "low"; // Changed "Low" to "low"
+            Console.WriteLine($"This car has a {condition} mileage of {miles:N2} miles.");
+            Console.WriteLine();
+
+            // Example 3: Interpolation with conditional Expression
+            Console.WriteLine("Example 3: Mathematical Expression");
+            double taxRate = 0.08;
+            decimal taxAmount = price * (decimal)taxRate;
+            Console.WriteLine($"Tax Amount: {taxAmount:C2}");
+            Console.WriteLine();
+
+            // Example 4: Displaying the Bar Graph
+            int[] dataPoints = { 10, 25, 15, 30, 20 };
+            Console.WriteLine("Example 4: Bar Graph");
+            for (int i = 0; i < dataPoints.Length; i++) // Fixed typo "Lenght" to "Length"
+            {
+                string bar = new string('#', dataPoints[i]);
+                Console.WriteLine($"{i + 1,2}: {bar,-30}"); // Adjusted formatting
+            }
+            Console.WriteLine();
+
+            // Example 5: Interpolation with Unicode characters
+            string musicalNote = "\u266B";
+            string happyFace = "\u263A";
+            Console.WriteLine($"Enjoy the {musicalNote} of life, and always stay {happyFace}!");
+
+            // Unicode and Musical Note Example (Extended)
+            Console.WriteLine("Unicode and Musical Note Example (Extended)");
+
+            // In this example, we'll explore the use of Unicode characters and string interpolation
+            // to create visually appealing and expressive text output.
+
+            // Unicode characters allow us to include a wide range of symbols, icons, and special
+            // characters in our strings. These characters can enhance the visual appearance of
+            // our output and add a touch of creativity.
+
+            // Now, let's use string interpolation to create a sentence incorporating the musical note:
+            string message1 = $"Feel the {musicalNote} of the music as it fills the air.";
+
+            // Next, let's explore another Unicode character. We'll use the Unicode character
+            // for a happy face emoticon:
+            string extendedHappyFace = "\u263A"; // Unicode character for a happy face emoticon
+
+            // Similar to the musical note, we'll use string interpolation to create a sentence
+            // with the happy face emoticon:
+            string message2 = $"Keep smiling and {extendedHappyFace} always";
+
+            // Now, let's combine both Unicode characters in a single message using string interpolation:
+            string combinedMessage = $"Let the {musicalNote} of life fill your days, and remember to {extendedHappyFace} every moment.";
+
+            // Display the messages we've created:
+            Console.WriteLine();
+            Console.WriteLine(message1); // Fixed to use variables
+            Console.WriteLine(message2); // Fixed to use variables
+            Console.WriteLine();
+            Console.WriteLine(combinedMessage); // Fixed to use variables
+
+            // The Unicode code point for the letter "A" is U+0041.
+            // The Unicode code point for the dollar sign "$" is U+0024.
+            // The Unicode code point for the heart emoji is U+2764.
+        }
+    }
+}
